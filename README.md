@@ -58,9 +58,22 @@ DB1=
   )
 ```
 
+Create table "bases" on "monitor" schema.
+```
+create table monitor.bases (id number,nombre_bd varhcar2(25),link2 varchar2(20), status char(1),monitor_inst char(1));
+insert into monitor.bases values (1,'DB1','LNK_BD1',1,1);
+commit;
+```
 
+Create usere "monitor" in Oracle Database remotly.
+```
+create schema monitor identified by "<Password_remotly>" profile default ACCOUNT UNLOCK;
+grant connect to monitor;
+grant select on sys.v_$session to monitor;
+grant select on sys.v_$instance to monitor;
+```
 
-Create database link to monitoring database remotly, on Oracle PDB:
+Create database link on Oracle XE to monitoring database remotly, on Oracle PDB:
 
 Example:
 ```
@@ -68,7 +81,7 @@ sqlplus sys/[Password]@//localhost:1521/XEPDB1 as sysdba
 
 CREATE DATABASE LINK LNK_BD1
  CONNECT TO MONITOR
- IDENTIFIED BY <Password>
+ IDENTIFIED BY <Password_remotly>
  USING 'BD1';
 ```
 
