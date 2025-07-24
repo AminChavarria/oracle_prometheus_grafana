@@ -2,7 +2,8 @@
 
 ## Instroduction
 
-
+Oracle_ prometeus is a Python script that uses the Prometheus Python library to monitor any Oracle database by executing any custom SELECT statement.
+Using an Oracle XE database as central monitoring without the need to install python on the database servers to be monitored.
 
 
 ## Architecture
@@ -34,6 +35,8 @@ grant connect to monitor;
 Create table "bases" on "monitor" schema.
 ```
 create table monitor.bases (id number,nombre_bd varhcar2(25),link2 varchar2(20), status char(1),monitor_inst char(1));
+insert into monitor.bases values (1,'DB1','LNK_BD1',1,1);
+commit;
 ```
 
 Add connection to database in tnsnames.ora file on ORACLE_HOME
