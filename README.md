@@ -14,7 +14,7 @@ Using an Oracle XE database as central monitoring without the need to install py
 
 ## Installation
 
-The latest release can be downloaded from the [releases page](https://github.com/prometheus-community/windows_exporter/releases).
+The latest release can be downloaded from the (https://github.com/AminChavarria/oracle_prometheus_grafana/releases).
 
 
 Install Oracle XE:
