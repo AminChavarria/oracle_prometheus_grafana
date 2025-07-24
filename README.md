@@ -78,32 +78,35 @@ select 1 from dual@LNK_BD1;
  
 You must have previously installed and configured Prometheus.
 
-in Prometheus
+The `oracle_metrics` will expose all metrics from enabled collectors by default.
+
+Add prometheus.yml:
+
+```
+- job_name: "Oracle"
+    # metrics_path: "/"
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    #- schema: "http"
+    static_configs:
+      - targets: ["127.0.0.1:7676"]
+```
 
 Each release provides a .py file. You will setup the oracle_prometheus.py as a Windows service or Linux service. 
 
 The oracle_prometheus.py is run without any parameters, you need settings the connection to Oracle XE like hostname, port and SID.
 
-The configuration file
-* is located in the same directory as the exporter executable.
-* has the YAML format and is provided with the `--config.file` parameter.
-* can be used to enable or disable collectors, set collector-specific parameters, and set global parameters.
-
-
 ```
-1. Install Oracle XE on WIndows or Linux.
-2. 
-
-pip install prometheus-client
+connection = oracledb.connect(
+            user="monitor",
+            password="password",
+            dsn="hostname:port/SID"
+            )
 ```
 
-This package can be found on [PyPI](https://pypi.python.org/pypi/prometheus_client).
+
+
 
 ## Documentation
 
 Documentation is available on https://prometheus.github.io/client_python
-
-## Links
-
-* [Releases](https://github.com/prometheus/client_python/releases): The releases page shows the history of the project and acts as a changelog.
-* [PyPI](https://pypi.python.org/pypi/prometheus_client)
