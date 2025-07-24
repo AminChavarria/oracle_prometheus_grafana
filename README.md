@@ -1,11 +1,14 @@
 # Custom Oracle metrics using Prometheus Python Client + Grafana
 
-<img width="1909" height="931" alt="image" src="https://github.com/user-attachments/assets/a26e81d2-cacb-4a6f-a370-51a06c991f0b" />
+## Instroduction
+
+
 
 
 ## Architecture
 
-<img width="326" height="341" alt="Oracle_metrics drawio" src="https://github.com/user-attachments/assets/bcfa8ae3-82ed-46ac-b100-fefed35af6a2" />
+<img width="426" height="444" alt="oracle_metrics drawio (1)" src="https://github.com/user-attachments/assets/b5a49225-b120-41eb-ba3a-17fc1098d5b5" />
+
 
 
 ## Installation
@@ -73,7 +76,9 @@ sqlplus sys/[Password]@//localhost:1521/XEPDB1 as sysdba
 select 1 from dual@LNK_BD1;
 ```
  
+You must have previously installed and configured Prometheus.
 
+in Prometheus
 
 Each release provides a .py file. You will setup the oracle_prometheus.py as a Windows service or Linux service. 
 
