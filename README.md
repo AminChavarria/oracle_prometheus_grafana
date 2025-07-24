@@ -1,4 +1,4 @@
-# Metrics Oracle using Prometheus Python Client + Grafana
+# Custom Oracle metrics using Prometheus Python Client + Grafana
 
 <img width="1909" height="931" alt="image" src="https://github.com/user-attachments/assets/a26e81d2-cacb-4a6f-a370-51a06c991f0b" />
 
